@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pt.tony.crudjava.enums.Category;
+import com.pt.tony.crudjava.enums.Status;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -30,8 +31,8 @@ public class Course {
     @Enumerated(EnumType.STRING)
     private Category category;
 
-    @Column(length = 10, nullable = false)
-    private String status = "active"; // setado no Mapper
+    @Enumerated(EnumType.STRING)
+    private Status status = Status.ACTIVE; // setado no Mapper
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "course")
     private List<Lesson> lessons = new ArrayList<>();
@@ -40,7 +41,7 @@ public class Course {
     public Course() {
     }
 
-    public Course(Long id, String name, Category category, String status, List<Lesson> lessons) {
+    public Course(Long id, String name, Category category, Status status, List<Lesson> lessons) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -73,11 +74,11 @@ public class Course {
         this.category = category;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 

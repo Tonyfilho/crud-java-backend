@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CrudJavaApplication<crud-java>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.pt.tony.crudjava.CrudJavaApplication",
+            "projectName": "crud-java",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
