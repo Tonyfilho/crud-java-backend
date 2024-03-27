@@ -3,10 +3,13 @@ package com.pt.tony.crudjava.dto.mapper;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Component;
+
 import com.pt.tony.crudjava.dto.CourseDTO;
 import com.pt.tony.crudjava.dto.LessonDTO;
 import com.pt.tony.crudjava.model.Course;
 
+@Component
 public class CourseMapper {
     
 
