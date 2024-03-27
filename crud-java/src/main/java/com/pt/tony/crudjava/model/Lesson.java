@@ -15,7 +15,7 @@ public class Lesson {
 
     @Id // diz a JPA que isto é um chave primaria
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    public Long id;
 
     
     private String name;
