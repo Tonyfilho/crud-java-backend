@@ -18,6 +18,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
+@SuppressWarnings("static-access")
 public class Course {
 
     @Id // diz a JPA que isto é um chave primaria
@@ -32,7 +33,7 @@ public class Course {
     private Category category;
 
     @Enumerated(EnumType.STRING)
-    private Status status = Status.ACTIVE; // setado no Mapper
+    private Status status; 
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "course")
     private List<Lesson> lessons = new ArrayList<>();
@@ -79,7 +80,7 @@ public class Course {
     }
 
     public void setStatus(Status status) {
-        this.status = status;
+        this.status = status.ACTIVE; /**setado o valor */
     }
 
     public List<Lesson> getLessons() {

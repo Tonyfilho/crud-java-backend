@@ -68,7 +68,7 @@ public class Lesson {
         this.youtubeUrl = youtubeUrl;
     }
 
-    // public Course getCourse() {
+    // public Course getCourse() { /**foi comentado para evitar erro CIclico de carregamento */
     //     return course;
     // }
 
